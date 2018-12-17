@@ -223,7 +223,7 @@ define(['jquery', 'core/str'], function($, corestr) {
              * be manually deselected.
              */
             if (courseFormat === 'onetopic') {
-                var activeTab = $('li.active:eq(0)');
+                var activeTab = $('.onetopic .nav-item .nav-link.active');
                 var textContent = activeTab[0].textContent;
                 var activeSection = $("li[aria-label='" + textContent + "']").attr('id');
                 activeSection = activeSection.split('-');
