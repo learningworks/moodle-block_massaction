@@ -91,6 +91,8 @@ class block_massaction extends block_base {
         if ($PAGE->user_is_editing()) {
             $jsdata = $this->get_section_data($COURSE);
             $jsdata['courseformat'] = $COURSE->format;
+            
+            //print_object($jsdata);
 
             /*
              * Have to cast $jsdata to an array, even though it's already an array, or the javascript
