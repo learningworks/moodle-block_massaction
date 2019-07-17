@@ -226,6 +226,10 @@ define(['jquery', 'core/str'], function($, corestr) {
                 var activeTab = $('.onetopic .nav-item .nav-link.active');
                 var textContent = activeTab[0].textContent;
                 var activeSection = $("li[aria-label='" + textContent + "']").attr('id');
+                if (activeSection === undefined) {
+                    textContent = activeTab[1].textContent;
+                    activeSection = $("li[aria-label='" + textContent + "']").attr('id');
+                }
                 activeSection = activeSection.split('-');
                 activeTabId = activeSection[1];
             }
