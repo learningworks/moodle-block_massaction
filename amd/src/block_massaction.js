@@ -77,7 +77,11 @@ define(['jquery', 'core/str'], function($, corestr) {
                      */
                     jQueryIdentifier = sectionId + ' ul.section li.activity ' + 'div.mod-indent-outer div';
                     courseActivities = $('#section-' + jQueryIdentifier).children('span.actions');
-
+                    // v3.9 adapted patch from Matt Davidson.
+                    // @link https://github.com/Syxton/moodle-block_massaction/commit/bd7343a9372e618fbdaa5e27abad76b9ebe534bd
+                    if (!courseActivities.length) {
+                        courseActivities = $('#section-' + jQueryIdentifier).children('div.actions');
+                    }
                     for (moduleKey in data.sectionmodules[sectionId]) {
                         moduleId = data.sectionmodules[sectionId][moduleKey];
                         inputControl = document.createElement('input');
